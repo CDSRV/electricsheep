@@ -23,6 +23,8 @@ AC_PROG_INSTALL
 AC_PROG_CC
 AC_PROG_CXX
 
+CXXFLAGS="-DGL_GLEXT_PROTOTYPES=1 -std=c++11 -pthread"
+
 dnl AC_CONFIG_MACRO_DIR([m4])
 
 AC_LIBTOOL_DLOPEN
@@ -163,6 +165,8 @@ AC_SUBST(AVUTIL_LIBS)
 
 
 dnl Check for lua
+
+LUA_LIBS="-llua-5.1 -lm -ldl"
 
 PKG_CHECK_MODULES([LUA], [lua5.1],, 
 	[PKG_CHECK_MODULES([LUA], [lua >= 5.1])
